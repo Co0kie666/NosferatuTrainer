@@ -43,7 +43,6 @@
             this.checkBoxAmmo.TabIndex = 0;
             this.checkBoxAmmo.Text = "Unlimited Ammo";
             this.checkBoxAmmo.UseVisualStyleBackColor = true;
-            this.checkBoxAmmo.CheckedChanged += new System.EventHandler(this.checkBoxAmmo_CheckedChanged);
             this.checkBoxAmmo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.checkBoxAmmo_KeyDown);
             // 
             // checkBoxHealth
@@ -55,7 +54,6 @@
             this.checkBoxHealth.TabIndex = 1;
             this.checkBoxHealth.Text = "Unlimited Health";
             this.checkBoxHealth.UseVisualStyleBackColor = true;
-            this.checkBoxHealth.CheckedChanged += new System.EventHandler(this.checkBoxHealth_CheckedChanged);
             // 
             // label1
             // 
@@ -65,7 +63,6 @@
             this.label1.Size = new System.Drawing.Size(59, 13);
             this.label1.TabIndex = 3;
             this.label1.Text = "Numpad 8:";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
