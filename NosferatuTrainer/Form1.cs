@@ -12,11 +12,12 @@ using System.Threading;
 
 namespace NosferatuTrainer
 {
-    public partial class Form1 : Form
+    public partial class MainWindow : Form
     {
         Mem mem = new Mem();
 
-        public Form1()
+
+        public MainWindow()
         {
             InitializeComponent();
         }
@@ -37,7 +38,6 @@ namespace NosferatuTrainer
             else
             {
                 Application.Exit();
-               
             }
         }
 
@@ -48,15 +48,47 @@ namespace NosferatuTrainer
                 if (this.checkBoxAmmo.Checked)
                 {
                     // "Nosferatu.exe"+0014A1EC
-                    mem.WriteMemory("Nosferatu.exe+0x0014A1EC,40,14C,158,8,35C,310","int","9999"); // Set loaded pistol ammo to 9999
+                    mem.WriteMemory("Nosferatu.exe+0x0014A1EC,40,14C,158,8,35C,310","int","9999"); // Set all ammo to 9999
                 }
                 if (this.checkBoxHealth.Checked)
                 {
                     // "Nosferatu.exe"+0014A1EC
                     mem.WriteMemory("Nosferatu.exe+0x0014A1EC,D68,14C,398,158,4,14C,3C0", "float", "100"); // Set health to a permanent 100
                 }
-                Thread.Sleep(50)
+                Thread.Sleep(50);
             }
+        }
+
+        private void checkBoxAmmo_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.NumPad8)
+            {
+                this.checkBoxAmmo.Checked = !this.checkBoxAmmo.Checked;
+            }
+            if (e.KeyCode == Keys.NumPad9)
+            {
+                this.checkBoxHealth.Checked = !this.checkBoxHealth.Checked;
+            }
+        }
+
+        private void checkBoxAmmo_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void checkBoxHealth_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
