@@ -37,6 +37,7 @@ namespace NosferatuTrainer
             else
             {
                 Application.Exit();
+               
             }
         }
 
@@ -44,12 +45,17 @@ namespace NosferatuTrainer
         {
             while (true)
             {
-                if (this.checkBox1.Checked)
+                if (this.checkBoxAmmo.Checked)
                 {
                     // "Nosferatu.exe"+0014A1EC
                     mem.WriteMemory("Nosferatu.exe+0x0014A1EC,40,14C,158,8,35C,310","int","9999"); // Set loaded pistol ammo to 9999
                 }
-                Thread.Sleep(50);
+                if (this.checkBoxHealth.Checked)
+                {
+                    // "Nosferatu.exe"+0014A1EC
+                    mem.WriteMemory("Nosferatu.exe+0x0014A1EC,D68,14C,398,158,4,14C,3C0", "float", "100"); // Set health to a permanent 100
+                }
+                Thread.Sleep(50)
             }
         }
     }

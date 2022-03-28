@@ -28,25 +28,37 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.checkBoxAmmo = new System.Windows.Forms.CheckBox();
+            this.checkBoxHealth = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
-            // checkBox1
+            // checkBoxAmmo
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(130, 96);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(101, 17);
-            this.checkBox1.TabIndex = 0;
-            this.checkBox1.Text = "Unlimited Ammo";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBoxAmmo.AutoSize = true;
+            this.checkBoxAmmo.Location = new System.Drawing.Point(49, 43);
+            this.checkBoxAmmo.Name = "checkBoxAmmo";
+            this.checkBoxAmmo.Size = new System.Drawing.Size(101, 17);
+            this.checkBoxAmmo.TabIndex = 0;
+            this.checkBoxAmmo.Text = "Unlimited Ammo";
+            this.checkBoxAmmo.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxHealth
+            // 
+            this.checkBoxHealth.AutoSize = true;
+            this.checkBoxHealth.Location = new System.Drawing.Point(231, 43);
+            this.checkBoxHealth.Name = "checkBoxHealth";
+            this.checkBoxHealth.Size = new System.Drawing.Size(103, 17);
+            this.checkBoxHealth.TabIndex = 1;
+            this.checkBoxHealth.Text = "Unlimited Health";
+            this.checkBoxHealth.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(387, 198);
-            this.Controls.Add(this.checkBox1);
+            this.Controls.Add(this.checkBoxHealth);
+            this.Controls.Add(this.checkBoxAmmo);
             this.Name = "Form1";
             this.Text = "Nosferatu Trainer";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -57,7 +69,8 @@
 
         #endregion
 
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox checkBoxAmmo;
+        private System.Windows.Forms.CheckBox checkBoxHealth;
     }
 }
 
