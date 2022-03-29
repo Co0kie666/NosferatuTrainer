@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+
 using Memory;
 using System.Threading;
 
@@ -15,7 +16,6 @@ namespace NosferatuTrainer
     public partial class MainWindow : Form
     {
         Mem mem = new Mem();
-        int initialAmmo;
 
         public MainWindow()
         {
@@ -37,22 +37,12 @@ namespace NosferatuTrainer
             }
             else
             {
-                Application.Exit();
+                Application.Exit(); // Nosferatu needs to be running otherwise nothing will happen when the trainer is launched
             }
         }
 
         private void writeMemory()
         {
-            
-            //this.initialAmmo = mem.ReadInt("Nosferatu.exe+0x0014A1EC,40,14C,158,8,35C,310");
-            //MessageBox.Show(initialAmmo.ToString());
-
-            if (!this.checkBoxAmmo.Checked)
-            {
-                mem.WriteMemory("Nosferatu.exe+0x0014A1EC,40,14C,158,8,35C,310", "int", this.initialAmmo.ToString());
-            }
-
-         
             while (true)
             {
                 if (this.checkBoxEnableTrainer.Checked)
@@ -62,7 +52,7 @@ namespace NosferatuTrainer
                         // "Nosferatu.exe"+0014A1EC
 
                         string ammoValue = "9999";
-                        mem.WriteMemory("Nosferatu.exe+0x0014A1EC,40,14C,158,8,35C,310", "int", ammoValue); // Set all ammo to 9999 
+                        mem.WriteMemory("Nosferatu.exe+0x0014A1EC,40,14C,158,8,35C,310", "int", ammoValue); // Set all ammo to a permanent 9999 
                     }
 
                     if (this.checkBoxHealth.Checked)
@@ -82,12 +72,7 @@ namespace NosferatuTrainer
             }
         }
 
-        private bool isTrainerEnabled()
-        {
-            return this.checkBoxEnableTrainer.Checked;
-        }
-
-        private void checkBoxes_KeyDown(object sender, KeyEventArgs e)
+        private void checkBoxes_KeyDown(object sender, KeyEventArgs e) // Keypresses are NOT global, app needs to be the selected one
         {
             if (e.KeyCode == Keys.NumPad0)
             {
