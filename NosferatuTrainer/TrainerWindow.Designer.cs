@@ -46,7 +46,7 @@
             this.checkBoxEnableExtraHardmode = new System.Windows.Forms.CheckBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.toolTipPastewka = new System.Windows.Forms.ToolTip(this.components);
+            this.toolTipAville = new System.Windows.Forms.ToolTip(this.components);
             this.toolTipExtraHardMode = new System.Windows.Forms.ToolTip(this.components);
             this.toolTipUnlimitedAmmo = new System.Windows.Forms.ToolTip(this.components);
             this.toolTipResetClock = new System.Windows.Forms.ToolTip(this.components);
@@ -139,7 +139,7 @@
             this.checkBoxAville.Size = new System.Drawing.Size(89, 17);
             this.checkBoxAville.TabIndex = 9;
             this.checkBoxAville.Text = "Kill Pastewka";
-            this.toolTipPastewka.SetToolTip(this.checkBoxAville, "meaning Father Aville");
+            this.toolTipAville.SetToolTip(this.checkBoxAville, "meaning Father Aville");
             this.checkBoxAville.UseVisualStyleBackColor = true;
             // 
             // label5
@@ -221,10 +221,6 @@
             this.label9.TabIndex = 17;
             this.label9.Text = "Use either Hard mode OR Unlimited Health";
             // 
-            // toolTipPastewka
-            // 
-            this.toolTipPastewka.Popup += new System.Windows.Forms.PopupEventHandler(this.toolTipPastewka_Popup);
-            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -274,7 +270,7 @@
         private System.Windows.Forms.CheckBox checkBoxEnableExtraHardmode;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.ToolTip toolTipPastewka;
+        private System.Windows.Forms.ToolTip toolTipAville;
         private System.Windows.Forms.ToolTip toolTipExtraHardMode;
         private System.Windows.Forms.ToolTip toolTipUnlimitedAmmo;
         private System.Windows.Forms.ToolTip toolTipResetClock;

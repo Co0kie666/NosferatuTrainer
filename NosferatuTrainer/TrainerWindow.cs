@@ -161,11 +161,6 @@ namespace NosferatuTrainer
         }
         #endregion
 
-        private void buttonResetClock_Click(object sender, EventArgs e)
-        {
-            this.resetClock();
-        }
-
         private int getInitialAmmo() 
         {
             return mem.ReadInt("Nosferatu.exe+0x0014A1EC,40,14C,158,8,35C,310");
@@ -190,6 +185,11 @@ namespace NosferatuTrainer
             }
         }
 
+        private void buttonResetClock_Click(object sender, EventArgs e)
+        {
+            this.resetClock();
+        }
+
         private void checkBoxEnableAll_CheckedChanged(object sender, EventArgs e)
         {
             this.toggleAllOptions();
@@ -202,7 +202,6 @@ namespace NosferatuTrainer
                 this.checkBoxHealth.Checked = false;
             }
         }
-
         private void checkBoxEnableHardmode_CheckedChanged(object sender, EventArgs e)
         {
             this.checkHardMode();
@@ -211,11 +210,6 @@ namespace NosferatuTrainer
         private void checkBoxHealth_CheckedChanged(object sender, EventArgs e)
         {
             this.checkHardMode();
-        }
-
-        private void toolTipPastewka_Popup(object sender, PopupEventArgs e)
-        {
-
         }
 
         // Jump height?
