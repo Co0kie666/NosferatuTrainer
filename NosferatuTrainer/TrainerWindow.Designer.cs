@@ -43,9 +43,8 @@
             this.label6 = new System.Windows.Forms.Label();
             this.checkBoxEnableAll = new System.Windows.Forms.CheckBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.checkBoxEnableExtraHardmode = new System.Windows.Forms.CheckBox();
+            this.checkBoxEnableDeathInOneHit = new System.Windows.Forms.CheckBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
             this.toolTipAville = new System.Windows.Forms.ToolTip(this.components);
             this.toolTipExtraHardMode = new System.Windows.Forms.ToolTip(this.components);
             this.toolTipUnlimitedAmmo = new System.Windows.Forms.ToolTip(this.components);
@@ -57,9 +56,9 @@
             this.checkBoxAmmo.AutoSize = true;
             this.checkBoxAmmo.Location = new System.Drawing.Point(77, 112);
             this.checkBoxAmmo.Name = "checkBoxAmmo";
-            this.checkBoxAmmo.Size = new System.Drawing.Size(101, 17);
+            this.checkBoxAmmo.Size = new System.Drawing.Size(100, 17);
             this.checkBoxAmmo.TabIndex = 0;
-            this.checkBoxAmmo.Text = "Unlimited Ammo";
+            this.checkBoxAmmo.Text = "Unlimited ammo";
             this.toolTipUnlimitedAmmo.SetToolTip(this.checkBoxAmmo, "except for Wooden Stakes");
             this.checkBoxAmmo.UseVisualStyleBackColor = true;
             this.checkBoxAmmo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.checkBoxes_KeyDown);
@@ -69,9 +68,9 @@
             this.checkBoxHealth.AutoSize = true;
             this.checkBoxHealth.Location = new System.Drawing.Point(77, 134);
             this.checkBoxHealth.Name = "checkBoxHealth";
-            this.checkBoxHealth.Size = new System.Drawing.Size(103, 17);
+            this.checkBoxHealth.Size = new System.Drawing.Size(101, 17);
             this.checkBoxHealth.TabIndex = 1;
-            this.checkBoxHealth.Text = "Unlimited Health";
+            this.checkBoxHealth.Text = "Unlimited health";
             this.checkBoxHealth.UseVisualStyleBackColor = true;
             this.checkBoxHealth.CheckedChanged += new System.EventHandler(this.checkBoxHealth_CheckedChanged);
             // 
@@ -98,9 +97,9 @@
             this.checkBoxEnableTrainer.AutoSize = true;
             this.checkBoxEnableTrainer.Location = new System.Drawing.Point(77, 9);
             this.checkBoxEnableTrainer.Name = "checkBoxEnableTrainer";
-            this.checkBoxEnableTrainer.Size = new System.Drawing.Size(95, 17);
+            this.checkBoxEnableTrainer.Size = new System.Drawing.Size(91, 17);
             this.checkBoxEnableTrainer.TabIndex = 5;
-            this.checkBoxEnableTrainer.Text = "Enable Trainer";
+            this.checkBoxEnableTrainer.Text = "Enable trainer";
             this.checkBoxEnableTrainer.UseVisualStyleBackColor = true;
             // 
             // label3
@@ -126,9 +125,9 @@
             this.checkBoxStamina.AutoSize = true;
             this.checkBoxStamina.Location = new System.Drawing.Point(77, 156);
             this.checkBoxStamina.Name = "checkBoxStamina";
-            this.checkBoxStamina.Size = new System.Drawing.Size(110, 17);
+            this.checkBoxStamina.Size = new System.Drawing.Size(108, 17);
             this.checkBoxStamina.TabIndex = 8;
-            this.checkBoxStamina.Text = "Unlimited Stamina";
+            this.checkBoxStamina.Text = "Unlimited stamina";
             this.checkBoxStamina.UseVisualStyleBackColor = true;
             // 
             // checkBoxAville
@@ -153,11 +152,11 @@
             // 
             // buttonResetClock
             // 
-            this.buttonResetClock.Location = new System.Drawing.Point(269, 85);
+            this.buttonResetClock.Location = new System.Drawing.Point(269, 152);
             this.buttonResetClock.Name = "buttonResetClock";
             this.buttonResetClock.Size = new System.Drawing.Size(75, 23);
             this.buttonResetClock.TabIndex = 11;
-            this.buttonResetClock.Text = "Reset Clock";
+            this.buttonResetClock.Text = "Reset clock";
             this.toolTipResetClock.SetToolTip(this.buttonResetClock, "Resets clock to 22:30:00 (starting time)\r\n");
             this.buttonResetClock.UseVisualStyleBackColor = true;
             this.buttonResetClock.Click += new System.EventHandler(this.buttonResetClock_Click);
@@ -165,7 +164,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(204, 90);
+            this.label6.Location = new System.Drawing.Point(204, 157);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(59, 13);
             this.label6.TabIndex = 12;
@@ -191,17 +190,17 @@
             this.label7.TabIndex = 14;
             this.label7.Text = "Numpad 1:";
             // 
-            // checkBoxEnableExtraHardmode
+            // checkBoxEnableDeathInOneHit
             // 
-            this.checkBoxEnableExtraHardmode.AutoSize = true;
-            this.checkBoxEnableExtraHardmode.Location = new System.Drawing.Point(77, 32);
-            this.checkBoxEnableExtraHardmode.Name = "checkBoxEnableExtraHardmode";
-            this.checkBoxEnableExtraHardmode.Size = new System.Drawing.Size(141, 17);
-            this.checkBoxEnableExtraHardmode.TabIndex = 15;
-            this.checkBoxEnableExtraHardmode.Text = "Enable Extra Hard mode";
-            this.toolTipExtraHardMode.SetToolTip(this.checkBoxEnableExtraHardmode, "Extra Hard mode = player dies in one hit");
-            this.checkBoxEnableExtraHardmode.UseVisualStyleBackColor = true;
-            this.checkBoxEnableExtraHardmode.CheckedChanged += new System.EventHandler(this.checkBoxEnableHardmode_CheckedChanged);
+            this.checkBoxEnableDeathInOneHit.AutoSize = true;
+            this.checkBoxEnableDeathInOneHit.Location = new System.Drawing.Point(77, 32);
+            this.checkBoxEnableDeathInOneHit.Name = "checkBoxEnableDeathInOneHit";
+            this.checkBoxEnableDeathInOneHit.Size = new System.Drawing.Size(135, 17);
+            this.checkBoxEnableDeathInOneHit.TabIndex = 15;
+            this.checkBoxEnableDeathInOneHit.Text = "Enable death in one hit";
+            this.toolTipExtraHardMode.SetToolTip(this.checkBoxEnableDeathInOneHit, "You die in one hit");
+            this.checkBoxEnableDeathInOneHit.UseVisualStyleBackColor = true;
+            this.checkBoxEnableDeathInOneHit.CheckedChanged += new System.EventHandler(this.checkBoxEnableHardmode_CheckedChanged);
             // 
             // label8
             // 
@@ -212,23 +211,13 @@
             this.label8.TabIndex = 16;
             this.label8.Text = "Numpad 2:";
             // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(12, 61);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(209, 13);
-            this.label9.TabIndex = 17;
-            this.label9.Text = "Use either Hard mode OR Unlimited Health";
-            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(387, 198);
-            this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.checkBoxEnableExtraHardmode);
+            this.Controls.Add(this.checkBoxEnableDeathInOneHit);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.checkBoxEnableAll);
             this.Controls.Add(this.label6);
@@ -267,9 +256,8 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.CheckBox checkBoxEnableAll;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.CheckBox checkBoxEnableExtraHardmode;
+        private System.Windows.Forms.CheckBox checkBoxEnableDeathInOneHit;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.ToolTip toolTipAville;
         private System.Windows.Forms.ToolTip toolTipExtraHardMode;
         private System.Windows.Forms.ToolTip toolTipUnlimitedAmmo;

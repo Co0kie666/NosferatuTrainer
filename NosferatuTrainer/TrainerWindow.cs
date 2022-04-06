@@ -24,7 +24,7 @@ namespace NosferatuTrainer
 
         private void TrainerWindow_Load(object sender, EventArgs e)
         {
-            CheckForIllegalCrossThreadCalls = false;
+            // CheckForIllegalCrossThreadCalls = false;
 
             int PID = mem.GetProcIdFromName("Nosferatu");
 
@@ -43,7 +43,7 @@ namespace NosferatuTrainer
         }
 
         private void writeMemory()
-        {   
+        {
             while (true)
             {
                 if (this.checkBoxEnableTrainer.Checked)
@@ -52,7 +52,7 @@ namespace NosferatuTrainer
                     {
                         this.unlimitedAmmo();
                     }
-                    if (this.checkBoxHealth.Checked && !this.checkBoxEnableExtraHardmode.Checked)
+                    if (this.checkBoxHealth.Checked && !this.checkBoxEnableDeathInOneHit.Checked)
                     {
                         this.unlimitedHealth();
                     }
@@ -64,9 +64,9 @@ namespace NosferatuTrainer
                     {
                         this.killAville();   
                     }
-                    if (this.checkBoxEnableExtraHardmode.Checked && !this.checkBoxHealth.Checked)
+                    if (this.checkBoxEnableDeathInOneHit.Checked && !this.checkBoxHealth.Checked)
                     {
-                        this.enableExtraHardMode();
+                        this.enableOneHitDeath();
                     }
                     Thread.Sleep(50);
                 }
@@ -106,7 +106,7 @@ namespace NosferatuTrainer
                                                                    // int value does not matter, reset is always to 22:30:00
         }
 
-        private void enableExtraHardMode()
+        private void enableOneHitDeath()
         {
             // "Nosferatu.exe"+0014A1EC
             mem.WriteMemory("Nosferatu.exe+0x0014A1EC,D68,14C,398,158,4,14C,3C0", "float", this.setPlayerHealth(1).ToString()); // Set health to a permanent 1 (Ont hit death)
@@ -133,7 +133,7 @@ namespace NosferatuTrainer
             }
             if (e.KeyCode == Keys.NumPad2)
             {
-                this.checkBoxEnableExtraHardmode.Checked = !this.checkBoxEnableExtraHardmode.Checked;
+                this.checkBoxEnableDeathInOneHit.Checked = !this.checkBoxEnableDeathInOneHit.Checked;
             }      
             if (e.KeyCode == Keys.NumPad5)
             {
@@ -161,10 +161,10 @@ namespace NosferatuTrainer
         }
         #endregion
 
-        private int getInitialAmmo() 
-        {
-            return mem.ReadInt("Nosferatu.exe+0x0014A1EC,40,14C,158,8,35C,310");
-        }
+        //private int getInitialAmmo() 
+        //{
+        //    return mem.ReadInt("Nosferatu.exe+0x0014A1EC,40,14C,158,8,35C,310");
+        //}
 
         private void toggleAllOptions()
         {
@@ -195,23 +195,23 @@ namespace NosferatuTrainer
             this.toggleAllOptions();
         }
 
-        private void checkHardMode()
+        private void deathInOneHit()
         {
-            if (this.checkBoxEnableExtraHardmode.Checked == true)
+            if (this.checkBoxEnableDeathInOneHit.Checked == true)
             {
                 this.checkBoxHealth.Checked = false;
             }
         }
+
         private void checkBoxEnableHardmode_CheckedChanged(object sender, EventArgs e)
         {
-            this.checkHardMode();
+            this.deathInOneHit();
         }
 
         private void checkBoxHealth_CheckedChanged(object sender, EventArgs e)
         {
-            this.checkHardMode();
+            this.deathInOneHit();
         }
-
         // Jump height?
         // Movement speed?
     }
