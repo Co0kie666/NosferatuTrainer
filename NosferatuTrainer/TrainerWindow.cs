@@ -58,18 +58,18 @@ namespace NosferatuTrainer
                     }
                     if (this.checkBoxStamina.Checked)
                     {
-                        this.unlimitedStamina();   
+                        this.unlimitedStamina();
                     }
                     if (this.checkBoxAville.Checked)
                     {
-                        this.killAville();   
+                        this.killAville();
                     }
                     if (this.checkBoxEnableDeathInOneHit.Checked && !this.checkBoxHealth.Checked)
                     {
                         this.enableOneHitDeath();
                     }
                     Thread.Sleep(50);
-                }
+                }  
             }
         }
 
@@ -84,7 +84,7 @@ namespace NosferatuTrainer
         private void unlimitedHealth()
         {
             // "Nosferatu.exe"+0014A1EC
-            mem.WriteMemory("Nosferatu.exe+0x0014A1EC,D68,14C,398,158,4,14C,3C0", "float", this.setPlayerHealth(100).ToString()); // Set health to a permanent 100
+            mem.WriteMemory("Nosferatu.exe+0x0014A1EC,D68,14C,398,158,4,14C,3C0", "float", "100"); // Set health to a permanent 100
         }
 
         private void unlimitedStamina()
@@ -109,12 +109,7 @@ namespace NosferatuTrainer
         private void enableOneHitDeath()
         {
             // "Nosferatu.exe"+0014A1EC
-            mem.WriteMemory("Nosferatu.exe+0x0014A1EC,D68,14C,398,158,4,14C,3C0", "float", this.setPlayerHealth(1).ToString()); // Set health to a permanent 1 (Ont hit death)
-        }
-
-        private float setPlayerHealth(float playerHealth)
-        {
-            return playerHealth;
+            mem.WriteMemory("Nosferatu.exe+0x0014A1EC,D68,14C,398,158,4,14C,3C0", "float", "1"); // Set health to a permanent 1 (Ont hit death)
         }
 
         #endregion
@@ -161,10 +156,10 @@ namespace NosferatuTrainer
         }
         #endregion
 
-        //private int getInitialAmmo() 
-        //{
-        //    return mem.ReadInt("Nosferatu.exe+0x0014A1EC,40,14C,158,8,35C,310");
-        //}
+        private int getInitialAmmo()
+        {
+            return mem.ReadInt("Nosferatu.exe+0x0014A1EC,40,14C,158,8,35C,310");
+        }
 
         private void toggleAllOptions()
         {
