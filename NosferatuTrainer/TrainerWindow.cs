@@ -50,11 +50,11 @@ namespace NosferatuTrainer
                 {
                     if (this.checkBoxAmmo.Checked)
                     {
-                        this.unlimitedAmmo();
+                        this.setAmmo(9999); // Unlimited Ammo
                     }
                     if (this.checkBoxHealth.Checked && !this.checkBoxEnableDeathInOneHit.Checked)
                     {
-                        this.unlimitedHealth();
+                        this.setHealth(100); // Unlimited Health
                     }
                     if (this.checkBoxStamina.Checked)
                     {
@@ -66,7 +66,7 @@ namespace NosferatuTrainer
                     }
                     if (this.checkBoxEnableDeathInOneHit.Checked && !this.checkBoxHealth.Checked)
                     {
-                        this.enableOneHitDeath();
+                        this.setHealth(1); // One hit deaths
                     }
                     Thread.Sleep(50);
                 }      
@@ -75,16 +75,16 @@ namespace NosferatuTrainer
 
         #region Trainer Options
 
-        private void unlimitedAmmo()
+        private void setAmmo(int ammoValue)
         {
             // "Nosferatu.exe"+0014A1EC
-            mem.WriteMemory("Nosferatu.exe+0x0014A1EC,40,14C,158,8,35C,310", "int", "9999"); // Set all ammo to a permanent 9999 
+            mem.WriteMemory("Nosferatu.exe+0x0014A1EC,40,14C,158,8,35C,310", "int", ammoValue.ToString()); // Set all ammo to a permanent 9999 
         }
 
-        private void unlimitedHealth()
+        private void setHealth(int healthValue)
         {
             // "Nosferatu.exe"+0014A1EC
-            mem.WriteMemory("Nosferatu.exe+0x0014A1EC,D68,14C,398,158,4,14C,3C0", "float", "100"); // Set health to a permanent 100
+            mem.WriteMemory("Nosferatu.exe+0x0014A1EC,D68,14C,398,158,4,14C,3C0", "float", healthValue.ToString()); // Set health to a permanent 100
         }
 
         private void unlimitedStamina()
@@ -104,12 +104,6 @@ namespace NosferatuTrainer
             // "Nosferatu.exe"+14BF6C
             mem.WriteMemory("Nosferatu.exe+0x14BF6C", "int", "0"); // Game clock gets reset to 22:30:00 (starting time)
                                                                    // int value does not matter, reset is always to 22:30:00
-        }
-
-        private void enableOneHitDeath()
-        {
-            // "Nosferatu.exe"+0014A1EC
-            mem.WriteMemory("Nosferatu.exe+0x0014A1EC,D68,14C,398,158,4,14C,3C0", "float", "1"); // Set health to a permanent 1 (Ont hit death)
         }
 
         #endregion
