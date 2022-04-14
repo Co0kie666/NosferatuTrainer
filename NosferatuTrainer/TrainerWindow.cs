@@ -69,7 +69,7 @@ namespace NosferatuTrainer
                         this.enableOneHitDeath();
                     }
                     Thread.Sleep(50);
-                }  
+                }      
             }
         }
 
@@ -190,23 +190,22 @@ namespace NosferatuTrainer
             this.toggleAllOptions();
         }
 
-        private void deathInOneHit()
+        private void checkBoxHealth_CheckedChanged(object sender, EventArgs e)
         {
-            if (this.checkBoxEnableDeathInOneHit.Checked == true)
+            if (this.checkBoxHealth.Checked == this.checkBoxEnableDeathInOneHit.Checked)
+            {
+                this.checkBoxEnableDeathInOneHit.Checked = false;
+            }
+        }
+
+        private void checkBoxEnableDeathInOneHit_CheckedChanged(object sender, EventArgs e)
+        {
+            if (this.checkBoxHealth.Checked == this.checkBoxEnableDeathInOneHit.Checked)
             {
                 this.checkBoxHealth.Checked = false;
             }
         }
 
-        private void checkBoxEnableHardmode_CheckedChanged(object sender, EventArgs e)
-        {
-            this.deathInOneHit();
-        }
-
-        private void checkBoxHealth_CheckedChanged(object sender, EventArgs e)
-        {
-            this.deathInOneHit();
-        }
         // Jump height?
         // Movement speed?
     }

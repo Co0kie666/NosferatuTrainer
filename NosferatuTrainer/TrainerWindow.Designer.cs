@@ -200,7 +200,7 @@
             this.checkBoxEnableDeathInOneHit.Text = "Enable death in one hit";
             this.toolTipExtraHardMode.SetToolTip(this.checkBoxEnableDeathInOneHit, "You die in one hit");
             this.checkBoxEnableDeathInOneHit.UseVisualStyleBackColor = true;
-            this.checkBoxEnableDeathInOneHit.CheckedChanged += new System.EventHandler(this.checkBoxEnableHardmode_CheckedChanged);
+            this.checkBoxEnableDeathInOneHit.CheckedChanged += new System.EventHandler(this.checkBoxEnableDeathInOneHit_CheckedChanged);
             // 
             // label8
             // 
