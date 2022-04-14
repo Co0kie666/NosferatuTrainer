@@ -83,7 +83,7 @@ namespace NosferatuTrainer
         private void setAmmo(int ammoValue)
         {
             // "Nosferatu.exe"+0014A1EC
-            mem.WriteMemory("Nosferatu.exe+0x0014A1EC,40,14C,158,8,35C,310", "int", ammoValue.ToString()); // Set ammo for the currently equipped weapon<
+            mem.WriteMemory("Nosferatu.exe+0x0014A1EC,40,14C,158,8,35C,310", "int", ammoValue.ToString()); // Set ammo for the currently equipped weapon
         }
 
         private void setHealth(int healthValue)
