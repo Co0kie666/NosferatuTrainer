@@ -43,7 +43,7 @@ namespace NosferatuTrainer
         }
 
         private void writeMemory()
-        {
+        {            
             while (true)
             {
                 if (this.checkBoxEnableTrainer.Checked)
@@ -52,6 +52,11 @@ namespace NosferatuTrainer
                     {
                         this.setAmmo(9999); // Unlimited Ammo
                     }
+                    else if (!this.checkBoxAmmo.Checked)
+                    {
+                        this.setAmmo(this.getInitialAmmo());
+                    }
+
                     if (this.checkBoxHealth.Checked && !this.checkBoxEnableDeathInOneHit.Checked)
                     {
                         this.setHealth(100); // Unlimited Health
@@ -66,7 +71,7 @@ namespace NosferatuTrainer
                     }
                     if (this.checkBoxEnableDeathInOneHit.Checked && !this.checkBoxHealth.Checked)
                     {
-                        this.setHealth(1); // One hit deaths
+                        this.setHealth(1); // Player dies in one hit
                     }
                     Thread.Sleep(50);
                 }      
@@ -78,13 +83,13 @@ namespace NosferatuTrainer
         private void setAmmo(int ammoValue)
         {
             // "Nosferatu.exe"+0014A1EC
-            mem.WriteMemory("Nosferatu.exe+0x0014A1EC,40,14C,158,8,35C,310", "int", ammoValue.ToString()); // Set all ammo to a permanent 9999 
+            mem.WriteMemory("Nosferatu.exe+0x0014A1EC,40,14C,158,8,35C,310", "int", ammoValue.ToString()); // Set ammo for the currently equipped weapon<
         }
 
         private void setHealth(int healthValue)
         {
             // "Nosferatu.exe"+0014A1EC
-            mem.WriteMemory("Nosferatu.exe+0x0014A1EC,D68,14C,398,158,4,14C,3C0", "float", healthValue.ToString()); // Set health to a permanent 100
+            mem.WriteMemory("Nosferatu.exe+0x0014A1EC,D68,14C,398,158,4,14C,3C0", "float", healthValue.ToString()); // Set health
         }
 
         private void unlimitedStamina()
