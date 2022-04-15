@@ -29,21 +29,21 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.checkBoxAmmo = new System.Windows.Forms.CheckBox();
-            this.checkBoxHealth = new System.Windows.Forms.CheckBox();
+            this.CheckBoxAmmo = new System.Windows.Forms.CheckBox();
+            this.CheckBoxHealth = new System.Windows.Forms.CheckBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.checkBoxEnableTrainer = new System.Windows.Forms.CheckBox();
+            this.CheckBoxEnableTrainer = new System.Windows.Forms.CheckBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.checkBoxStamina = new System.Windows.Forms.CheckBox();
-            this.checkBoxAville = new System.Windows.Forms.CheckBox();
+            this.CheckBoxStamina = new System.Windows.Forms.CheckBox();
+            this.CheckBoxAville = new System.Windows.Forms.CheckBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.buttonResetClock = new System.Windows.Forms.Button();
+            this.ButtonResetClock = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
-            this.checkBoxEnableAll = new System.Windows.Forms.CheckBox();
+            this.CheckBoxEnableAll = new System.Windows.Forms.CheckBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.checkBoxEnableDeathInOneHit = new System.Windows.Forms.CheckBox();
+            this.CheckBoxEnableDeathInOneHit = new System.Windows.Forms.CheckBox();
             this.label8 = new System.Windows.Forms.Label();
             this.toolTipAville = new System.Windows.Forms.ToolTip(this.components);
             this.toolTipExtraHardMode = new System.Windows.Forms.ToolTip(this.components);
@@ -51,28 +51,28 @@
             this.toolTipResetClock = new System.Windows.Forms.ToolTip(this.components);
             this.SuspendLayout();
             // 
-            // checkBoxAmmo
+            // CheckBoxAmmo
             // 
-            this.checkBoxAmmo.AutoSize = true;
-            this.checkBoxAmmo.Location = new System.Drawing.Point(77, 112);
-            this.checkBoxAmmo.Name = "checkBoxAmmo";
-            this.checkBoxAmmo.Size = new System.Drawing.Size(100, 17);
-            this.checkBoxAmmo.TabIndex = 0;
-            this.checkBoxAmmo.Text = "Unlimited ammo";
-            this.toolTipUnlimitedAmmo.SetToolTip(this.checkBoxAmmo, "except for Wooden Stakes");
-            this.checkBoxAmmo.UseVisualStyleBackColor = true;
-            this.checkBoxAmmo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.checkBoxes_KeyDown);
+            this.CheckBoxAmmo.AutoSize = true;
+            this.CheckBoxAmmo.Location = new System.Drawing.Point(77, 112);
+            this.CheckBoxAmmo.Name = "CheckBoxAmmo";
+            this.CheckBoxAmmo.Size = new System.Drawing.Size(100, 17);
+            this.CheckBoxAmmo.TabIndex = 0;
+            this.CheckBoxAmmo.Text = "Unlimited ammo";
+            this.toolTipUnlimitedAmmo.SetToolTip(this.CheckBoxAmmo, "except for Wooden Stakes");
+            this.CheckBoxAmmo.UseVisualStyleBackColor = true;
+            this.CheckBoxAmmo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.checkBoxes_KeyDown);
             // 
-            // checkBoxHealth
+            // CheckBoxHealth
             // 
-            this.checkBoxHealth.AutoSize = true;
-            this.checkBoxHealth.Location = new System.Drawing.Point(77, 134);
-            this.checkBoxHealth.Name = "checkBoxHealth";
-            this.checkBoxHealth.Size = new System.Drawing.Size(101, 17);
-            this.checkBoxHealth.TabIndex = 1;
-            this.checkBoxHealth.Text = "Unlimited health";
-            this.checkBoxHealth.UseVisualStyleBackColor = true;
-            this.checkBoxHealth.CheckedChanged += new System.EventHandler(this.checkBoxHealth_CheckedChanged);
+            this.CheckBoxHealth.AutoSize = true;
+            this.CheckBoxHealth.Location = new System.Drawing.Point(77, 134);
+            this.CheckBoxHealth.Name = "CheckBoxHealth";
+            this.CheckBoxHealth.Size = new System.Drawing.Size(101, 17);
+            this.CheckBoxHealth.TabIndex = 1;
+            this.CheckBoxHealth.Text = "Unlimited health";
+            this.CheckBoxHealth.UseVisualStyleBackColor = true;
+            this.CheckBoxHealth.CheckedChanged += new System.EventHandler(this.CheckBoxHealth_CheckedChanged);
             // 
             // label1
             // 
@@ -92,15 +92,15 @@
             this.label2.TabIndex = 4;
             this.label2.Text = "Numpad 8:";
             // 
-            // checkBoxEnableTrainer
+            // CheckBoxEnableTrainer
             // 
-            this.checkBoxEnableTrainer.AutoSize = true;
-            this.checkBoxEnableTrainer.Location = new System.Drawing.Point(77, 9);
-            this.checkBoxEnableTrainer.Name = "checkBoxEnableTrainer";
-            this.checkBoxEnableTrainer.Size = new System.Drawing.Size(91, 17);
-            this.checkBoxEnableTrainer.TabIndex = 5;
-            this.checkBoxEnableTrainer.Text = "Enable trainer";
-            this.checkBoxEnableTrainer.UseVisualStyleBackColor = true;
+            this.CheckBoxEnableTrainer.AutoSize = true;
+            this.CheckBoxEnableTrainer.Location = new System.Drawing.Point(77, 9);
+            this.CheckBoxEnableTrainer.Name = "CheckBoxEnableTrainer";
+            this.CheckBoxEnableTrainer.Size = new System.Drawing.Size(91, 17);
+            this.CheckBoxEnableTrainer.TabIndex = 5;
+            this.CheckBoxEnableTrainer.Text = "Enable trainer";
+            this.CheckBoxEnableTrainer.UseVisualStyleBackColor = true;
             // 
             // label3
             // 
@@ -120,26 +120,26 @@
             this.label4.TabIndex = 7;
             this.label4.Text = "Numpad 9:";
             // 
-            // checkBoxStamina
+            // CheckBoxStamina
             // 
-            this.checkBoxStamina.AutoSize = true;
-            this.checkBoxStamina.Location = new System.Drawing.Point(77, 156);
-            this.checkBoxStamina.Name = "checkBoxStamina";
-            this.checkBoxStamina.Size = new System.Drawing.Size(108, 17);
-            this.checkBoxStamina.TabIndex = 8;
-            this.checkBoxStamina.Text = "Unlimited stamina";
-            this.checkBoxStamina.UseVisualStyleBackColor = true;
+            this.CheckBoxStamina.AutoSize = true;
+            this.CheckBoxStamina.Location = new System.Drawing.Point(77, 156);
+            this.CheckBoxStamina.Name = "CheckBoxStamina";
+            this.CheckBoxStamina.Size = new System.Drawing.Size(108, 17);
+            this.CheckBoxStamina.TabIndex = 8;
+            this.CheckBoxStamina.Text = "Unlimited stamina";
+            this.CheckBoxStamina.UseVisualStyleBackColor = true;
             // 
-            // checkBoxAville
+            // CheckBoxAville
             // 
-            this.checkBoxAville.AutoSize = true;
-            this.checkBoxAville.Location = new System.Drawing.Point(77, 91);
-            this.checkBoxAville.Name = "checkBoxAville";
-            this.checkBoxAville.Size = new System.Drawing.Size(89, 17);
-            this.checkBoxAville.TabIndex = 9;
-            this.checkBoxAville.Text = "Kill Pastewka";
-            this.toolTipAville.SetToolTip(this.checkBoxAville, "meaning Father Aville");
-            this.checkBoxAville.UseVisualStyleBackColor = true;
+            this.CheckBoxAville.AutoSize = true;
+            this.CheckBoxAville.Location = new System.Drawing.Point(77, 91);
+            this.CheckBoxAville.Name = "CheckBoxAville";
+            this.CheckBoxAville.Size = new System.Drawing.Size(89, 17);
+            this.CheckBoxAville.TabIndex = 9;
+            this.CheckBoxAville.Text = "Kill Pastewka";
+            this.toolTipAville.SetToolTip(this.CheckBoxAville, "meaning Father Aville");
+            this.CheckBoxAville.UseVisualStyleBackColor = true;
             // 
             // label5
             // 
@@ -150,16 +150,16 @@
             this.label5.TabIndex = 10;
             this.label5.Text = "Numpad 6:";
             // 
-            // buttonResetClock
+            // ButtonResetClock
             // 
-            this.buttonResetClock.Location = new System.Drawing.Point(269, 152);
-            this.buttonResetClock.Name = "buttonResetClock";
-            this.buttonResetClock.Size = new System.Drawing.Size(75, 23);
-            this.buttonResetClock.TabIndex = 11;
-            this.buttonResetClock.Text = "Reset clock";
-            this.toolTipResetClock.SetToolTip(this.buttonResetClock, "Resets clock to 22:30:00 (starting time)\r\n");
-            this.buttonResetClock.UseVisualStyleBackColor = true;
-            this.buttonResetClock.Click += new System.EventHandler(this.buttonResetClock_Click);
+            this.ButtonResetClock.Location = new System.Drawing.Point(269, 152);
+            this.ButtonResetClock.Name = "ButtonResetClock";
+            this.ButtonResetClock.Size = new System.Drawing.Size(75, 23);
+            this.ButtonResetClock.TabIndex = 11;
+            this.ButtonResetClock.Text = "Reset clock";
+            this.toolTipResetClock.SetToolTip(this.ButtonResetClock, "Resets clock to 22:30:00 (starting time)\r\n");
+            this.ButtonResetClock.UseVisualStyleBackColor = true;
+            this.ButtonResetClock.Click += new System.EventHandler(this.ButtonResetClock_Click);
             // 
             // label6
             // 
@@ -170,16 +170,16 @@
             this.label6.TabIndex = 12;
             this.label6.Text = "Numpad 5:";
             // 
-            // checkBoxEnableAll
+            // CheckBoxEnableAll
             // 
-            this.checkBoxEnableAll.AutoSize = true;
-            this.checkBoxEnableAll.Location = new System.Drawing.Point(269, 9);
-            this.checkBoxEnableAll.Name = "checkBoxEnableAll";
-            this.checkBoxEnableAll.Size = new System.Drawing.Size(111, 17);
-            this.checkBoxEnableAll.TabIndex = 13;
-            this.checkBoxEnableAll.Text = "Enable everything";
-            this.checkBoxEnableAll.UseVisualStyleBackColor = true;
-            this.checkBoxEnableAll.CheckedChanged += new System.EventHandler(this.checkBoxEnableAll_CheckedChanged);
+            this.CheckBoxEnableAll.AutoSize = true;
+            this.CheckBoxEnableAll.Location = new System.Drawing.Point(269, 9);
+            this.CheckBoxEnableAll.Name = "CheckBoxEnableAll";
+            this.CheckBoxEnableAll.Size = new System.Drawing.Size(111, 17);
+            this.CheckBoxEnableAll.TabIndex = 13;
+            this.CheckBoxEnableAll.Text = "Enable everything";
+            this.CheckBoxEnableAll.UseVisualStyleBackColor = true;
+            this.CheckBoxEnableAll.CheckedChanged += new System.EventHandler(this.CheckBoxEnableAll_CheckedChanged);
             // 
             // label7
             // 
@@ -190,17 +190,17 @@
             this.label7.TabIndex = 14;
             this.label7.Text = "Numpad 1:";
             // 
-            // checkBoxEnableDeathInOneHit
+            // CheckBoxEnableDeathInOneHit
             // 
-            this.checkBoxEnableDeathInOneHit.AutoSize = true;
-            this.checkBoxEnableDeathInOneHit.Location = new System.Drawing.Point(77, 32);
-            this.checkBoxEnableDeathInOneHit.Name = "checkBoxEnableDeathInOneHit";
-            this.checkBoxEnableDeathInOneHit.Size = new System.Drawing.Size(135, 17);
-            this.checkBoxEnableDeathInOneHit.TabIndex = 15;
-            this.checkBoxEnableDeathInOneHit.Text = "Enable death in one hit";
-            this.toolTipExtraHardMode.SetToolTip(this.checkBoxEnableDeathInOneHit, "You die in one hit");
-            this.checkBoxEnableDeathInOneHit.UseVisualStyleBackColor = true;
-            this.checkBoxEnableDeathInOneHit.CheckedChanged += new System.EventHandler(this.checkBoxEnableDeathInOneHit_CheckedChanged);
+            this.CheckBoxEnableDeathInOneHit.AutoSize = true;
+            this.CheckBoxEnableDeathInOneHit.Location = new System.Drawing.Point(77, 32);
+            this.CheckBoxEnableDeathInOneHit.Name = "CheckBoxEnableDeathInOneHit";
+            this.CheckBoxEnableDeathInOneHit.Size = new System.Drawing.Size(135, 17);
+            this.CheckBoxEnableDeathInOneHit.TabIndex = 15;
+            this.CheckBoxEnableDeathInOneHit.Text = "Enable death in one hit";
+            this.toolTipExtraHardMode.SetToolTip(this.CheckBoxEnableDeathInOneHit, "You die in one hit");
+            this.CheckBoxEnableDeathInOneHit.UseVisualStyleBackColor = true;
+            this.CheckBoxEnableDeathInOneHit.CheckedChanged += new System.EventHandler(this.CheckBoxEnableDeathInOneHit_CheckedChanged);
             // 
             // label8
             // 
@@ -217,21 +217,21 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(387, 198);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.checkBoxEnableDeathInOneHit);
+            this.Controls.Add(this.CheckBoxEnableDeathInOneHit);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.checkBoxEnableAll);
+            this.Controls.Add(this.CheckBoxEnableAll);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.buttonResetClock);
+            this.Controls.Add(this.ButtonResetClock);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.checkBoxAville);
-            this.Controls.Add(this.checkBoxStamina);
+            this.Controls.Add(this.CheckBoxAville);
+            this.Controls.Add(this.CheckBoxStamina);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.checkBoxEnableTrainer);
+            this.Controls.Add(this.CheckBoxEnableTrainer);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.checkBoxHealth);
-            this.Controls.Add(this.checkBoxAmmo);
+            this.Controls.Add(this.CheckBoxHealth);
+            this.Controls.Add(this.CheckBoxAmmo);
             this.Name = "MainWindow";
             this.Text = "Nosferatu Trainer";
             this.Load += new System.EventHandler(this.TrainerWindow_Load);
@@ -242,21 +242,21 @@
 
         #endregion
 
-        private System.Windows.Forms.CheckBox checkBoxAmmo;
-        private System.Windows.Forms.CheckBox checkBoxHealth;
+        private System.Windows.Forms.CheckBox CheckBoxAmmo;
+        private System.Windows.Forms.CheckBox CheckBoxHealth;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.CheckBox checkBoxEnableTrainer;
+        private System.Windows.Forms.CheckBox CheckBoxEnableTrainer;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.CheckBox checkBoxStamina;
-        private System.Windows.Forms.CheckBox checkBoxAville;
+        private System.Windows.Forms.CheckBox CheckBoxStamina;
+        private System.Windows.Forms.CheckBox CheckBoxAville;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button buttonResetClock;
+        private System.Windows.Forms.Button ButtonResetClock;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.CheckBox checkBoxEnableAll;
+        private System.Windows.Forms.CheckBox CheckBoxEnableAll;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.CheckBox checkBoxEnableDeathInOneHit;
+        private System.Windows.Forms.CheckBox CheckBoxEnableDeathInOneHit;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.ToolTip toolTipAville;
         private System.Windows.Forms.ToolTip toolTipExtraHardMode;

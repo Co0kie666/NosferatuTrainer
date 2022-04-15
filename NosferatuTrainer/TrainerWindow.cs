@@ -32,7 +32,7 @@ namespace NosferatuTrainer
             {
                 mem.OpenProcess(PID);
 
-                Thread TH = new Thread(writeMemory);
+                Thread TH = new Thread(WriteMemory);
                 TH.Start();
             }
 
@@ -42,36 +42,32 @@ namespace NosferatuTrainer
             }
         }
 
-        private void writeMemory()
+        private void WriteMemory()
         {            
             while (true)
             {
-                if (this.checkBoxEnableTrainer.Checked)
+                if (this.CheckBoxEnableTrainer.Checked)
                 {
-                    if (this.checkBoxAmmo.Checked)
+                    if (this.CheckBoxAmmo.Checked)
                     {
-                        this.setAmmo(9999); // Unlimited Ammo
-                    }
-                    else if (!this.checkBoxAmmo.Checked)
-                    {
-                        this.setAmmo(this.getInitialAmmo());
+                        this.SetAmmo(9999); // Unlimited Ammo
                     }
 
-                    if (this.checkBoxHealth.Checked && !this.checkBoxEnableDeathInOneHit.Checked)
+                    if (this.CheckBoxHealth.Checked && !this.CheckBoxEnableDeathInOneHit.Checked)
                     {
-                        this.setHealth(100); // Unlimited Health
+                        this.SetHealth(100); // Unlimited Health
                     }
-                    if (this.checkBoxStamina.Checked)
+                    if (this.CheckBoxStamina.Checked)
                     {
-                        this.unlimitedStamina();
+                        this.UnlimitedStamina();
                     }
-                    if (this.checkBoxAville.Checked)
+                    if (this.CheckBoxAville.Checked)
                     {
-                        this.killAville();
+                        this.KillAville();
                     }
-                    if (this.checkBoxEnableDeathInOneHit.Checked && !this.checkBoxHealth.Checked)
+                    if (this.CheckBoxEnableDeathInOneHit.Checked && !this.CheckBoxHealth.Checked)
                     {
-                        this.setHealth(1); // Player dies in one hit
+                        this.SetHealth(1); // Player dies in one hit
                     }
                     Thread.Sleep(50);
                 }      
@@ -80,31 +76,31 @@ namespace NosferatuTrainer
 
         #region Trainer Options
 
-        private void setAmmo(int ammoValue)
+        private void SetAmmo(int ammoValue)
         {
             // "Nosferatu.exe"+0014A1EC
             mem.WriteMemory("Nosferatu.exe+0x0014A1EC,40,14C,158,8,35C,310", "int", ammoValue.ToString()); // Set ammo for the currently equipped weapon
         }
 
-        private void setHealth(int healthValue)
+        private void SetHealth(int healthValue)
         {
             // "Nosferatu.exe"+0014A1EC
             mem.WriteMemory("Nosferatu.exe+0x0014A1EC,D68,14C,398,158,4,14C,3C0", "float", healthValue.ToString()); // Set health
         }
 
-        private void unlimitedStamina()
+        private void UnlimitedStamina()
         {
             // "Nosferatu.exe"+0014C09C
             mem.WriteMemory("Nosferatu.exe+0x0014C09C,A0,1D4,38,14,38,3B0", "float", "1"); // Set Stamina to a permanent 1 (No exhaustion)
         }
 
-        private void killAville()
+        private void KillAville()
         {
             // "Nosferatu.exe"+0014C09C
             mem.WriteMemory("Nosferatu.exe+0x0014C09C,44,14C,14C,14C,3B0,C, 3C0", "float", "-1"); // Kills Father Aville when he jumps out of the window
         }
 
-        private void resetClock()
+        private void ResetClock()
         {
             // "Nosferatu.exe"+14BF6C
             mem.WriteMemory("Nosferatu.exe+0x14BF6C", "int", "0"); // Game clock gets reset to 22:30:00 (starting time)
@@ -118,90 +114,90 @@ namespace NosferatuTrainer
         {
             if (e.KeyCode == Keys.NumPad0)
             {
-                this.checkBoxEnableTrainer.Checked = !this.checkBoxEnableTrainer.Checked;
+                this.CheckBoxEnableTrainer.Checked = !this.CheckBoxEnableTrainer.Checked;
             }
             if (e.KeyCode == Keys.NumPad1)
             {
-                this.checkBoxEnableAll.Checked = !this.checkBoxEnableAll.Checked;
-                this.toggleAllOptions();
+                this.CheckBoxEnableAll.Checked = !this.CheckBoxEnableAll.Checked;
+                this.ToggleAllOptions();
             }
             if (e.KeyCode == Keys.NumPad2)
             {
-                this.checkBoxEnableDeathInOneHit.Checked = !this.checkBoxEnableDeathInOneHit.Checked;
+                this.CheckBoxEnableDeathInOneHit.Checked = !this.CheckBoxEnableDeathInOneHit.Checked;
             }      
             if (e.KeyCode == Keys.NumPad5)
             {
-                if (this.checkBoxEnableTrainer.Checked)
+                if (this.CheckBoxEnableTrainer.Checked)
                 {
-                    this.resetClock();
+                    this.ResetClock();
                 }
             }
             if (e.KeyCode == Keys.NumPad6)
             {
-                this.checkBoxAville.Checked = !this.checkBoxAville.Checked;
+                this.CheckBoxAville.Checked = !this.CheckBoxAville.Checked;
             }
             if (e.KeyCode == Keys.NumPad7)
             {
-                this.checkBoxAmmo.Checked = !this.checkBoxAmmo.Checked;
+                this.CheckBoxAmmo.Checked = !this.CheckBoxAmmo.Checked;
             }
             if (e.KeyCode == Keys.NumPad8)
             {
-                this.checkBoxHealth.Checked = !this.checkBoxHealth.Checked;
+                this.CheckBoxHealth.Checked = !this.CheckBoxHealth.Checked;
             }
             if (e.KeyCode == Keys.NumPad9)
             {
-                this.checkBoxStamina.Checked = !this.checkBoxStamina.Checked;
+                this.CheckBoxStamina.Checked = !this.CheckBoxStamina.Checked;
             }
         }
         #endregion
 
-        private int getInitialAmmo()
-        {
-            return mem.ReadInt("Nosferatu.exe+0x0014A1EC,40,14C,158,8,35C,310");
-        }
+        //private int getInitialAmmo()
+        //{
+        //    return mem.ReadInt("Nosferatu.exe+0x0014A1EC,40,14C,158,8,35C,310");
+        //}
 
-        private void toggleAllOptions()
+        private void ToggleAllOptions()
         {
-            if (this.checkBoxEnableAll.Checked)
+            if (this.CheckBoxEnableAll.Checked)
             {
-                this.checkBoxAmmo.Checked = true;
-                this.checkBoxHealth.Checked = true;
-                this.checkBoxStamina.Checked = true;
-                this.checkBoxAville.Checked = true;
+                this.CheckBoxAmmo.Checked = true;
+                this.CheckBoxHealth.Checked = true;
+                this.CheckBoxStamina.Checked = true;
+                this.CheckBoxAville.Checked = true;
             }
 
-            else if (this.checkBoxEnableAll.Checked == false)
+            else if (this.CheckBoxEnableAll.Checked == false)
             {
-                this.checkBoxAmmo.Checked = false;
-                this.checkBoxHealth.Checked = false;
-                this.checkBoxStamina.Checked = false;
-                this.checkBoxAville.Checked = false;
-            }
-        }
-
-        private void buttonResetClock_Click(object sender, EventArgs e)
-        {
-            this.resetClock();
-        }
-
-        private void checkBoxEnableAll_CheckedChanged(object sender, EventArgs e)
-        {
-            this.toggleAllOptions();
-        }
-
-        private void checkBoxHealth_CheckedChanged(object sender, EventArgs e)
-        {
-            if (this.checkBoxHealth.Checked == this.checkBoxEnableDeathInOneHit.Checked)
-            {
-                this.checkBoxEnableDeathInOneHit.Checked = false;
+                this.CheckBoxAmmo.Checked = false;
+                this.CheckBoxHealth.Checked = false;
+                this.CheckBoxStamina.Checked = false;
+                this.CheckBoxAville.Checked = false;
             }
         }
 
-        private void checkBoxEnableDeathInOneHit_CheckedChanged(object sender, EventArgs e)
+        private void ButtonResetClock_Click(object sender, EventArgs e)
         {
-            if (this.checkBoxHealth.Checked == this.checkBoxEnableDeathInOneHit.Checked)
+            this.ResetClock();
+        }
+
+        private void CheckBoxEnableAll_CheckedChanged(object sender, EventArgs e)
+        {
+            this.ToggleAllOptions();
+        }
+
+        private void CheckBoxHealth_CheckedChanged(object sender, EventArgs e)
+        {
+            if (this.CheckBoxHealth.Checked == this.CheckBoxEnableDeathInOneHit.Checked)
             {
-                this.checkBoxHealth.Checked = false;
+                this.CheckBoxEnableDeathInOneHit.Checked = false;
+            }
+        }
+
+        private void CheckBoxEnableDeathInOneHit_CheckedChanged(object sender, EventArgs e)
+        {
+            if (this.CheckBoxHealth.Checked == this.CheckBoxEnableDeathInOneHit.Checked)
+            {
+                this.CheckBoxHealth.Checked = false;
             }
         }
 
