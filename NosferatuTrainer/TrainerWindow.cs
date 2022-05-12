@@ -52,18 +52,17 @@ namespace NosferatuTrainer
                     {
                         this.SetAmmo(9999); // Unlimited Ammo
                     }
-
                     if (this.CheckBoxHealth.Checked && !this.CheckBoxEnableDeathInOneHit.Checked)
                     {
                         this.SetHealth(100); // Unlimited Health
                     }
                     if (this.CheckBoxStamina.Checked)
                     {
-                        this.UnlimitedStamina();
+                        this.SetStamina(1); // Unlimited Stamina
                     }
                     if (this.CheckBoxAville.Checked)
                     {
-                        this.KillAville();
+                        this.KillAville(); // Father Aville immediately dies when he jumpes out of the window
                     }
                     if (this.CheckBoxEnableDeathInOneHit.Checked && !this.CheckBoxHealth.Checked)
                     {
@@ -79,7 +78,7 @@ namespace NosferatuTrainer
         private void SetAmmo(int ammoValue)
         {
             // "Nosferatu.exe"+0014A1EC
-            mem.WriteMemory("Nosferatu.exe+0x0014A1EC,40,14C,158,8,35C,310", "int", ammoValue.ToString()); // Set ammo for the currently equipped weapon
+            mem.WriteMemory("Nosferatu.exe+0x0014A1EC,40,14C,158,8,35C,310", "int", ammoValue.ToString()); // Set loaded ammo for the currently equipped weapon
         }
 
         private void SetHealth(int healthValue)
@@ -88,16 +87,17 @@ namespace NosferatuTrainer
             mem.WriteMemory("Nosferatu.exe+0x0014A1EC,D68,14C,398,158,4,14C,3C0", "float", healthValue.ToString()); // Set health
         }
 
-        private void UnlimitedStamina()
+        private void SetStamina(int staminaValue)
         {
             // "Nosferatu.exe"+0014C09C
-            mem.WriteMemory("Nosferatu.exe+0x0014C09C,A0,1D4,38,14,38,3B0", "float", "1"); // Set Stamina to a permanent 1 (No exhaustion)
+            mem.WriteMemory("Nosferatu.exe+0x0014C09C,A0,1D4,38,14,38,3B0", "float", staminaValue.ToString()); // Set Stamina
         }
 
         private void KillAville()
         {
             // "Nosferatu.exe"+0014C09C
             mem.WriteMemory("Nosferatu.exe+0x0014C09C,44,14C,14C,14C,3B0,C, 3C0", "float", "-1"); // Kills Father Aville when he jumps out of the window
+                                                                                                 
         }
 
         private void ResetClock()
