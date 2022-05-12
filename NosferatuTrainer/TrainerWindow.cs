@@ -38,7 +38,7 @@ namespace NosferatuTrainer
 
             else
             {
-                Application.Exit(); // Nosferatu needs to be running otherwise nothing will happen when the trainer is launched
+                Application.Exit(); // Nosferatu needs to be running otherwise nothing will happen when the trainer is launched.
             }
         }
 
