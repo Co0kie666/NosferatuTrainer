@@ -24,7 +24,7 @@ namespace NosferatuTrainer
 
         private void TrainerWindow_Load(object sender, EventArgs e)
         {
-            // CheckForIllegalCrossThreadCalls = false;
+            CheckForIllegalCrossThreadCalls = false;
 
             int PID = mem.GetProcIdFromName("Nosferatu");
 

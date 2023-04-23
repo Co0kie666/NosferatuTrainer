@@ -140,6 +140,7 @@
             this.CheckBoxAville.Text = "Kill Pastewka";
             this.toolTipAville.SetToolTip(this.CheckBoxAville, "meaning Father Aville");
             this.CheckBoxAville.UseVisualStyleBackColor = true;
+            this.CheckBoxAville.CheckedChanged += new System.EventHandler(this.CheckBoxAville_CheckedChanged);
             // 
             // label5
             // 
