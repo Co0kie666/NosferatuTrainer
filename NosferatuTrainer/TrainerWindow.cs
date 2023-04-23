@@ -96,7 +96,7 @@ namespace NosferatuTrainer
         private void KillAville()
         {
             // "Nosferatu.exe"+0014C09C
-            mem.WriteMemory("Nosferatu.exe+0x0014C09C,44,14C,14C,14C,3B0,C, 3C0", "float", "-1"); // Kills Father Aville when he jumps out of the window
+            mem.WriteMemory("Nosferatu.exe+0x0014B664,48,6C,1B4,8,498,25C,3C0", "float", "-1"); // Kills Father Aville when he jumps out of the window
                                                                                                  
         }
 
@@ -199,6 +199,11 @@ namespace NosferatuTrainer
             {
                 this.CheckBoxHealth.Checked = false;
             }
+        }
+
+        private void CheckBoxAville_CheckedChanged(object sender, EventArgs e)
+        {
+
         }
 
         // Jump height?

@@ -135,9 +135,9 @@
             this.CheckBoxAville.AutoSize = true;
             this.CheckBoxAville.Location = new System.Drawing.Point(77, 91);
             this.CheckBoxAville.Name = "CheckBoxAville";
-            this.CheckBoxAville.Size = new System.Drawing.Size(89, 17);
+            this.CheckBoxAville.Size = new System.Drawing.Size(100, 17);
             this.CheckBoxAville.TabIndex = 9;
-            this.CheckBoxAville.Text = "Kill Pastewka";
+            this.CheckBoxAville.Text = "Kill Father Aville";
             this.toolTipAville.SetToolTip(this.CheckBoxAville, "meaning Father Aville");
             this.CheckBoxAville.UseVisualStyleBackColor = true;
             this.CheckBoxAville.CheckedChanged += new System.EventHandler(this.CheckBoxAville_CheckedChanged);
